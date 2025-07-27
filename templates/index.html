@@ -1,100 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cerberu IA – Suscripciones y Descarga</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-    <style>
-      body.dark {
-        background-color: #111827;
-        color: #ffffff;
-      }
-      .switch {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Modo Oscuro Toggle -->
-    <div class="switch">
-      <label class="flex items-center cursor-pointer">
-        <input type="checkbox" id="toggleDark" class="hidden" />
-        <div
-          class="w-10 h-6 bg-gray-300 rounded-full p-1 flex items-center"
-          style="background-color: #ccc;"
-        >
-          <div
-            class="bg-white w-4 h-4 rounded-full shadow-md transform transition duration-300 ease-in-out"
-          ></div>
-        </div>
-      </label>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentesaAI.com - Cerberu IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <style>
+    .switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-300">
+
+  <div class="switch">
+    <label class="flex items-center cursor-pointer">
+      <input type="checkbox" id="toggleDark" class="hidden">
+      <div class="w-10 h-6 bg-gray-300 dark:bg-gray-700 rounded-full p-1 flex items-center">
+        <div class="bg-white dark:bg-gray-300 w-4 h-4 rounded-full shadow-md transform transition duration-300 ease-in-out"></div>
+      </div>
+    </label>
+  </div>
+
+  <main class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <img src="{{ url_for('static', filename='portada.png') }}" alt="Portada AgentesaAI" class="w-full max-w-4xl rounded-2xl shadow-xl mb-6" />
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenido a Cerberu</h1>
+    <p class="mb-2 text-lg md:text-xl">Tu agente inteligente para gestionar suscripciones y más.</p>
+    <p class="text-yellow-500 font-semibold mb-6 text-lg">🎁 ¡Estás en tu prueba gratuita de 14 días!</p>
+    <p>Gestiona, automatiza y protege tus datos con la ayuda de nuestro agente IA de nueva generación. Cerberu combina inteligencia, seguridad y automatización para ayudarte a estar siempre un paso adelante.</p>
+
+
+    <p class="text-yellow-500"><strong>🎁 ¡Estás en tu prueba gratuita de 14 días!</strong></p>
+
+    h3>Descarga Cerberu IA</h3>
+    <p>Accede a todas las funcionalidades de nuestro sistema inteligente desde tu dispositivo. Disponible ahora con acceso inmediato.</p>
+
+    <a href="/descargar" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition">
+      Descargar Cerberu IA
+    </a>
+
+    <div class="mt-10 text-sm text-gray-400 dark:text-gray-500">
+      Desarrollado por Adolfo Domínguez y su compañero Soft
     </div>
+  </main>
 
-    <nav class="container-fluid">
-      <ul>
-        <li><strong>CERBERU IA</strong></li>
-      </ul>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Suscripciones</a></li>
-        <li><a href="#" role="button">Descargar</a></li>
-      </ul>
-    </nav>
-
-    <main class="container">
-      <img src="{{ url_for('static', filename='portada.png') }}" alt="Portada AgentesaAI" class="w-full max-w-4xl rounded-2xl shadow-xl mb-6" />
-      <div class="grid">
-        <section>
-          <hgroup>
-            <h2>Bienvenido a Cerberu</h2>
-            <h3>Tu agente inteligente para suscripciones</h3>
-          </hgroup>
-
-          <p>Gestiona, automatiza y protege tus datos con la ayuda de nuestro agente IA de nueva generación. Cerberu combina inteligencia, seguridad y automatización para ayudarte a estar siempre un paso adelante.</p>
-
-
-          <p class="text-yellow-500"><strong>🎁 ¡Estás en tu prueba gratuita de 14 días!</strong></p>
-
-          <h3>Descarga Cerberu IA</h3>
-          <p>Accede a todas las funcionalidades de nuestro sistema inteligente desde tu dispositivo. Disponible ahora con acceso inmediato.</p>
-
-          <a href="/descargar" class="contrast" role="button">Descargar Cerberu IA</a>
-        </section>
-      </div>
-    </main>
-
-    <section aria-label="Subscribe example">
-      <div class="container">
-        <article>
-          <hgroup>
-            <h2>¿Deseas recibir novedades?</h2>
-            <h3>Suscríbete para estar al día con las funciones de Cerberu IA</h3>
-          </hgroup>
-          <form class="grid">
-            <input type="text" id="firstname" name="firstname" placeholder="Tu nombre" aria-label="Tu nombre" required />
-            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" required />
-            <button type="submit" onclick="event.preventDefault()">Suscribirme</button>
-          </form>
-        </article>
-      </div>
-    </section>
-
-    <footer class="container">
-      <small>
-        <a href="#">Política de privacidad</a> • <a href="#">Contacto</a><br />
-        Desarrollado por Adolfo Domínguez y su compañero Soft
-      </small>
-    </footer>
-
-    <script>
-      const toggle = document.getElementById("toggleDark");
-      const body = document.body;
-      toggle.addEventListener("change", () => {
-        body.classList.toggle("dark");
-      });
-    </script>
-  </body>
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    const body = document.body;
+    toggle.addEventListener("change", () => {
+      body.classList.toggle("dark");
+    });
+  </script>
+</body>
 </html>
