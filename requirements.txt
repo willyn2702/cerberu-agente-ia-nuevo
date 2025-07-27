@@ -1,0 +1,11 @@
+flask
+flask-cors
+gunicorn
+python-dotenv
+pyttsx3
+SpeechRecognition
+openai
+pandas
+matplotlib
+openpyxl
+psycopg2-binary
